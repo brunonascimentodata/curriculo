@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bruno Nascimento | Data Analytics & BI</title>
+  <style>
+    :root{
+      --bg:#07090c;--side:#090d12;--panel:#11171d;--panel2:#151c23;--gold:#d8ad4c;--gold2:#f3d37a;
+      --text:#f5f2eb;--muted:#aeb4bd;--soft:#cfd3d8;--line:rgba(216,173,76,.24);--whiteLine:rgba(255,255,255,.08);
+      --shadow:0 28px 80px rgba(0,0,0,.55);
+    }
+    *{box-sizing:border-box;margin:0;padding:0} html{scroll-behavior:smooth} body{font-family:Inter,Segoe UI,Arial,sans-serif;background:radial-gradient(circle at 20% 0%,rgba(216,173,76,.12),transparent 33%),linear-gradient(135deg,#050607,#111820 55%,#07090c);color:var(--text);line-height:1.45} a{color:inherit;text-decoration:none}
+    .page{width:min(1190px,calc(100% - 28px));margin:0 auto;padding:18px 0 42px}.shell{display:grid;grid-template-columns:190px 1fr;min-height:100vh;border:1px solid var(--whiteLine);border-radius:16px;overflow:hidden;background:rgba(7,9,12,.78);box-shadow:var(--shadow)}
+    .side{background:var(--side);border-right:1px solid var(--whiteLine);padding:26px 14px;display:flex;flex-direction:column;align-items:stretch;gap:28px}.logo{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,#5f4418,var(--gold));color:#101010;font-weight:950;font-style:italic;letter-spacing:-.08em;margin:0 auto}.nav{display:flex;flex-direction:column;gap:10px;margin-top:24px}.nav a{min-height:42px;border-radius:12px;display:flex;align-items:center;gap:10px;color:var(--muted);border:1px solid transparent;padding:0 12px;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}.nav a .ico{width:24px;text-align:center;color:var(--gold)}.nav a:hover{color:var(--gold2);background:rgba(216,173,76,.10);border-color:var(--line)}
+    .content{padding:40px 34px 28px;background:linear-gradient(180deg,rgba(255,255,255,.035),transparent)}.hero{position:relative;display:grid;grid-template-columns:1fr 385px;gap:30px;align-items:center;min-height:420px;padding:10px 0 30px}.hero:before{content:"BN";position:absolute;right:292px;top:54px;font-size:188px;font-weight:950;color:rgba(216,173,76,.035);letter-spacing:-.09em;z-index:0}.headline{position:relative;z-index:1}h1{font-size:clamp(54px,7vw,88px);line-height:.88;letter-spacing:-.07em;margin-bottom:18px}h1 span{display:block;color:var(--gold)}.role{letter-spacing:.38em;font-size:13px;color:#dde0e4;text-transform:uppercase;margin-bottom:24px}.lead{font-size:17px;color:#d1d5db;max-width:680px;margin-bottom:28px}.contacts{display:flex;gap:16px;flex-wrap:wrap;color:#d8dce3;font-size:13px}.contact{display:flex;align-items:center;gap:8px}.contact b{color:var(--gold)}
+    .photoWrap{height:430px;border-radius:0 0 18px 18px;overflow:hidden;position:relative;align-self:end;z-index:1}.photoWrap:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,10,13,.03),rgba(8,10,13,.12),rgba(8,10,13,.48));pointer-events:none}.photo{width:100%;height:100%;object-fit:cover;object-position:center top;filter:grayscale(100%) contrast(1.08)}
+    .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:4px 0 22px}.kpi{padding:22px;border:1px solid var(--whiteLine);border-radius:14px;background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025));box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}.kpiIcon{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#604519,var(--gold));color:#111;font-size:22px;margin-bottom:14px}.kpi h3{color:var(--gold2);font-size:18px}.kpi small{display:block;text-transform:uppercase;letter-spacing:.24em;color:#bcc1c8;font-size:10px;margin:3px 0 13px}.kpi p{color:#c7cbd1;font-size:13px}
+    .grid{display:grid;grid-template-columns:1.02fr .98fr;gap:20px}.card{border:1px solid var(--whiteLine);border-radius:14px;background:linear-gradient(145deg,rgba(255,255,255,.065),rgba(255,255,255,.022));padding:24px;box-shadow:inset 0 1px 0 rgba(255,255,255,.055)}.title{display:flex;align-items:center;gap:12px;margin-bottom:18px}.title i{width:34px;height:34px;border-radius:9px;border:1px solid var(--line);display:grid;place-items:center;color:var(--gold)}h2{font-size:20px;text-transform:uppercase;letter-spacing:.05em}.card p{color:#cbd0d6;font-size:14px;margin-bottom:14px}.bullets{display:grid;gap:9px;margin:18px 0 22px}.bullets li{list-style:none;color:#d4d7dc;font-size:14px;display:flex;gap:10px}.check{color:var(--gold);font-weight:900}.divider{border-top:1px solid rgba(216,173,76,.22);padding-top:18px;margin-top:18px}
+    .timeline{display:grid;gap:17px}.job{display:grid;grid-template-columns:22px 1fr auto;gap:12px}.dot{width:10px;height:10px;background:var(--gold);border-radius:50%;margin-top:7px;box-shadow:0 0 0 5px rgba(216,173,76,.1)}.job h3{font-size:15px;text-transform:uppercase}.job .company{color:var(--gold);font-size:13px;margin:3px 0 6px}.job time{color:#b8bdc4;font-size:12px;white-space:nowrap}.job p{grid-column:2/4;font-size:13px;color:#bfc4cb;margin:0}.job ul{grid-column:2/4;margin:0 0 0 16px;color:#c6cbd1;font-size:12.8px}.job li{margin:5px 0}
+    .stack{display:grid;gap:8px}.skill{display:grid;grid-template-columns:34px 1fr 128px;align-items:center;gap:12px;padding:9px 12px;border-radius:9px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.045)}.skillIcon{width:28px;height:28px;border-radius:7px;display:grid;place-items:center;background:#0b0f13;color:var(--gold2);font-weight:900;border:1px solid rgba(216,173,76,.23);font-size:10px}.skillName{font-size:14px}.checks{text-align:right;color:var(--gold);letter-spacing:5px;font-weight:900}.empty{color:rgba(216,173,76,.24)}
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.project{padding:14px;border-radius:12px;border:1px solid var(--whiteLine);background:rgba(0,0,0,.16)}.project strong{color:var(--gold2);font-size:14px}.project p{font-size:12.5px;margin:6px 0 0;color:#c5c9cf}.chips{display:flex;flex-wrap:wrap;gap:9px}.chip{font-size:12px;border:1px solid rgba(216,173,76,.22);border-radius:8px;padding:8px 10px;color:#d8dce2;background:rgba(216,173,76,.045)}
+    .footer{margin-top:20px;padding:18px 22px;border:1px solid var(--whiteLine);border-radius:12px;display:flex;justify-content:space-between;gap:18px;align-items:center;background:#0d1116}.quote{color:var(--gold);letter-spacing:.20em;text-transform:uppercase;font-size:12px}.btn{background:linear-gradient(135deg,#5d4217,var(--gold));color:#111;padding:12px 18px;border-radius:8px;font-weight:900;font-size:12px;text-transform:uppercase}
+    @media(max-width:980px){.shell{grid-template-columns:1fr}.side{display:none}.content{padding:24px 18px}.hero{grid-template-columns:1fr}.photoWrap{height:520px;order:-1}.kpis,.grid,.projects{grid-template-columns:1fr}.skill{grid-template-columns:34px 1fr}.checks{text-align:left;grid-column:2}.footer{flex-direction:column;align-items:flex-start}.job{grid-template-columns:22px 1fr}.job time{grid-column:2}.job p,.job ul{grid-column:2}}
+    @media print{body{background:#fff;color:#111}.page{width:100%;padding:0}.shell,.card,.kpi,.footer{box-shadow:none}.side,.btn{display:none}.shell{display:block;border:0}.content{padding:0}.photoWrap{height:300px}.card,.kpi,.footer{background:#fff;border-color:#ddd}.lead,.card p,.job p,.job li,.kpi p{color:#333}}
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="shell">
+      <aside class="side">
+        <div class="logo">BN</div>
+        <nav class="nav">
+          <a href="#sobre"><span class="ico">👤</span><span>Resumo</span></a>
+          <a href="#stack"><span class="ico">⌨</span><span>Skills</span></a>
+          <a href="#projetos"><span class="ico">▦</span><span>Projetos</span></a>
+          <a href="#exp"><span class="ico">▤</span><span>Experiência</span></a>
+          <a href="#contato"><span class="ico">✉</span><span>Contato</span></a>
+        </nav>
+      </aside>
+      <section class="content">
+        <header class="hero">
+          <div class="headline">
+            <h1>Bruno <span>Nascimento</span></h1>
+            <div class="role">Data Analytics • BI • Growth • Produto</div>
+            <p class="lead">Analista de Dados Pleno com atuação em Business Intelligence, ETL, SQL, Python, automação e análise de funil. Conecto dados, operação, marketing e produto para transformar informação bruta em eficiência, crescimento e decisão estratégica.</p>
+            <div class="contacts">
+              <span class="contact"><b>✉</b> bruno.sampaionascimento@outlook.com</span>
+              <span class="contact"><b>☎</b> (11) 99205-8579</span>
+              <span class="contact"><b>⌖</b> São Paulo - SP</span>
+              <span class="contact"><b>in</b> linkedin.com/in/brunosnascimento-data</span>
+            </div>
+          </div>
+          <div class="photoWrap"><img class="photo" src="assets/fotoperfil.jpg" alt="Foto profissional de Bruno Nascimento"></div>
+        </header>
+
+        <section class="kpis">
+          <div class="kpi"><div class="kpiIcon">📊</div><h3>DADOS PARA DIREÇÃO</h3><small>BI executivo</small><p>Dashboards, KPIs, relatórios gerenciais e leitura estratégica para Marketing, Growth, Produto e Comercial.</p></div>
+          <div class="kpi"><div class="kpiIcon">⚙</div><h3>PIPELINES & AUTOMAÇÃO</h3><small>Eficiência operacional</small><p>ETL, APIs, Python, Selenium, Web Scraping e integrações para reduzir esforço manual e acelerar análise.</p></div>
+          <div class="kpi"><div class="kpiIcon">🚀</div><h3>CRESCIMENTO & PRODUTO</h3><small>Funil e conversão</small><p>Análise de leads, comportamento, ticket médio, variações mensais, conversão e oportunidades de negócio.</p></div>
+        </section>
+
+        <section class="grid">
+          <div class="card" id="sobre">
+            <div class="title"><i>▣</i><h2>Resumo profissional</h2></div>
+            <p>Profissional hands-on e consultivo, com forte atuação em análise exploratória, modelagem, visualização de dados, integração via API e construção de dashboards executivos.</p>
+            <p>Minha história profissional é sobre transformar operação em inteligência: organizo dados, encontro padrões, automatizo rotinas e entrego leituras claras para apoiar decisões com evidências.</p>
+            <ul class="bullets">
+              <li><span class="check">✓</span> Data Analytics, Business Intelligence e Growth Analytics.</li>
+              <li><span class="check">✓</span> Análise de funil, conversão, ticket médio, UF e tendências mensais.</li>
+              <li><span class="check">✓</span> Automação de processos analíticos e pipelines ETL.</li>
+              <li><span class="check">✓</span> Dashboards executivos para tomada de decisão.</li>
+            </ul>
+
+            <div class="divider" id="exp">
+              <div class="title"><i>▤</i><h2>Experiência profissional</h2></div>
+              <div class="timeline">
+                <div class="job"><span class="dot"></span><div><h3>Analista de Dados Pleno</h3><div class="company">VIP Leilões</div></div><time>Out 2024 - Atual</time><ul><li>Desenvolvimento de dashboards em Power BI e relatórios de BI para Marketing, Growth e Diretoria.</li><li>Construção de pipelines ETL e integrações via APIs, Python e Selenium.</li><li>Análise de funil de leads, conversão, ticket médio, performance por UF e tendências mensais.</li><li>Automação de processos analíticos e estruturação da base de atendimento.</li></ul></div>
+                <div class="job"><span class="dot"></span><div><h3>Analista de Dados Pleno</h3><div class="company">CSU</div></div><time>Dez 2020 - Abr 2023</time><ul><li>Criação de dashboards de BI e indicadores operacionais para decisões executivas.</li><li>Automatização de rotinas analíticas em SQL e Python.</li><li>Modelagem e tratamento de dados para múltiplas áreas da empresa.</li><li>Análise de comportamento de cliente, atendimento e performance operacional.</li></ul></div>
+                <div class="job"><span class="dot"></span><div><h3>Analista de Dados</h3><div class="company">Supersim</div></div><time>Ago 2020 - Nov 2020</time><ul><li>Estruturação completa da base analítica da área.</li><li>Criação de indicadores financeiros e de performance de carteira.</li><li>Desenvolvimento de relatórios estratégicos e apoio à gestão de dados.</li></ul></div>
+              </div>
+            </div>
+
+            <div class="divider">
+              <div class="title"><i>◇</i><h2>Formação</h2></div>
+              <p><strong>Bacharel em Gestão de Projetos</strong><br>UNINOVE • 2017 - 2019</p>
+            </div>
+          </div>
+
+          <div class="card" id="stack">
+            <div class="title"><i>&lt;/&gt;</i><h2>Skills & Stack</h2></div>
+            <div class="stack">
+              <div class="skill"><span class="skillIcon">BI</span><span class="skillName">Business Intelligence</span><span class="checks">✓✓✓✓✓</span></div>
+              <div class="skill"><span class="skillIcon">PBI</span><span class="skillName">Power BI</span><span class="checks">✓✓✓✓✓</span></div>
+              <div class="skill"><span class="skillIcon">XL</span><span class="skillName">Excel Avançado</span><span class="checks">✓✓✓✓✓</span></div>
+              <div class="skill"><span class="skillIcon">SQL</span><span class="skillName">SQL / Modelagem de Dados</span><span class="checks">✓✓✓✓✓</span></div>
+              <div class="skill"><span class="skillIcon">PY</span><span class="skillName">Python</span><span class="checks">✓✓✓✓✓</span></div>
+              <div class="skill"><span class="skillIcon">PD</span><span class="skillName">Pandas / NumPy</span><span class="checks">✓✓✓✓<span class="empty">✓</span></span></div>
+              <div class="skill"><span class="skillIcon">ETL</span><span class="skillName">ETL / Pipelines</span><span class="checks">✓✓✓✓✓</span></div>
+              <div class="skill"><span class="skillIcon">API</span><span class="skillName">APIs REST / JSON</span><span class="checks">✓✓✓✓<span class="empty">✓</span></span></div>
+              <div class="skill"><span class="skillIcon">SEL</span><span class="skillName">Selenium / Web Scraping</span><span class="checks">✓✓✓✓<span class="empty">✓</span></span></div>
+              <div class="skill"><span class="skillIcon">PW</span><span class="skillName">Playwright</span><span class="checks">✓✓✓<span class="empty">✓✓</span></span></div>
+              <div class="skill"><span class="skillIcon">GIT</span><span class="skillName">Git / GitHub</span><span class="checks">✓✓✓✓<span class="empty">✓</span></span></div>
+              <div class="skill"><span class="skillIcon">AZ</span><span class="skillName">Azure DevOps / Jenkins</span><span class="checks">✓✓✓<span class="empty">✓✓</span></span></div>
+              <div class="skill"><span class="skillIcon">JIRA</span><span class="skillName">Jira / Confluence</span><span class="checks">✓✓✓✓<span class="empty">✓</span></span></div>
+              <div class="skill"><span class="skillIcon">GCP</span><span class="skillName">Google Cloud</span><span class="checks">✓✓✓<span class="empty">✓✓</span></span></div>
+            </div>
+
+            <div class="divider">
+              <div class="title"><i>☆</i><h2>Competências</h2></div>
+              <div class="chips"><span class="chip">Data Analytics</span><span class="chip">Growth Analytics</span><span class="chip">Análise de Funil</span><span class="chip">KPIs</span><span class="chip">Conversão</span><span class="chip">Visualização de Dados</span><span class="chip">Automação</span><span class="chip">Produto</span><span class="chip">Marketing</span><span class="chip">Comercial</span></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card" id="projetos" style="margin-top:20px">
+          <div class="title"><i>▦</i><h2>Projetos e entregas que reforçam meu posicionamento</h2></div>
+          <div class="projects">
+            <div class="project"><strong>Hub de Marketing 2.0</strong><p>Estruturação de um portal gerencial inspirado no “Tabelão”, consolidando indicadores estratégicos de Imóveis, Veículos, Carbuy e Correios. Projeto focado em leitura executiva, performance por BU, CRM, Instagram, eficiência operacional, faturamento e conversão.</p></div>
+
+            <div class="project"><strong>Análise de GAPs Operacionais e CRM</strong><p>Cruzamento de bases RD Station, manutenção, análise LV e funis comerciais para identificar perdas de oportunidade, gargalos de atendimento e desvios no processo comercial. O estudo encontrou vendas milionárias ligadas a falhas operacionais e ausência de rastreabilidade.</p></div>
+
+            <div class="project"><strong>Dashboards Executivos para Diretoria</strong><p>Construção de painéis de BI para Marketing, Growth e Diretoria com acompanhamento de KPIs, performance por UF, funil de leads, ticket médio, conversão, estoque, faturamento e tendências mensais.</p></div>
+
+            <div class="project"><strong>VIP Coletor</strong><p>Aplicação Python com interface gráfica para coleta automatizada de dados de leilões. Integra múltiplos coletores, exportação Excel, filtros, resumo executivo e análise macro operacional, reduzindo trabalho manual do time.</p></div>
+
+            <div class="project"><strong>Integrações via API e ETL</strong><p>Desenvolvimento de pipelines ETL utilizando SQL, Python e APIs REST para integração entre plataformas como RD Conversas, RD CRM e bases internas, garantindo padronização e escalabilidade dos dados.</p></div>
+
+            <div class="project"><strong>Automação e Inteligência Operacional</strong><p>Automação de rotinas analíticas, padronização de métricas e construção de análises exploratórias voltadas à tomada de decisão rápida, redução de esforço manual e aumento de eficiência operacional.</p></div>
+          </div>
+        </section>
+
+        <footer class="footer" id="contato"><div><div class="quote">“Dados precisam virar decisão. Decisão precisa virar crescimento.”</div></div><a class="btn" href="mailto:bruno.sampaionascimento@outlook.com">Entre em contato →</a></footer>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
